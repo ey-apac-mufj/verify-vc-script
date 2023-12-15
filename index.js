@@ -9,10 +9,6 @@ const resolver = new didResolver.Resolver({
   ...webResolver,
 });
 
-// resolver
-//   .resolve("did:web:musim-mas.mullet.one")
-//   .then((doc) => console.log(doc.didDocument.verificationMethod));
-
 function verifyCreds() {
   vcjsonData.map(async (vcRecord) => {
     const verifiedVC = await didJwtVc.verifyCredential(
