@@ -11,6 +11,8 @@ const resolver = new didResolver.Resolver({
 
 function verifyCreds() {
   vcjsonData.map(async (vcRecord) => {
+    // if (vcRecord.expireDate < Today) return false;
+    // if (revoked) return false;
     const verifiedVC = await didJwtVc.verifyCredential(
       vcRecord.proof.jwt,
       resolver
